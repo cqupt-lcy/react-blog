@@ -1,11 +1,14 @@
 import ReactDOM from 'react-dom/client';
-import App from './App';
 import './index.scss'
 import { RouterProvider } from 'react-router-dom';
 import router from './router';
+import { Provider } from 'react-redux';
+import store from './store';
+import '@ant-design/v5-patch-for-react-19'
+import 'normalize.css'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <RouterProvider router={router}>
-    <App />
-  </RouterProvider>
+  <Provider store={store}>
+    <RouterProvider router={router} />
+  </Provider>
 );
